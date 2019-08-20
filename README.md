@@ -1,2 +1,6 @@
-# TIL
-Today I Learned. 매일 배운 것 정리
+# Today I Learned(TIL)
+[![Blog](https://img.shields.io/badge/Blog-bomcoding.github.io-green.svg)](https://bomcoding.github.io/)
+
+## HTML / CSS
+* 기본문법
+  * HTML 기본문법
