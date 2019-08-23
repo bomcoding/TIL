@@ -2,9 +2,9 @@
 [![Blog](https://img.shields.io/badge/Blog-bomcoding.github.io-green.svg)](https://bomcoding.github.io/)
 
 ## HTML / CSS
-* 사용빈도 높은 문법
-  * [HTML 문법]
-  * [CSS 문법]
+* 사용빈도 높은 태그
+  * [HTML 태그]
+  * [CSS 태그]
 
 ## JavaScript & Jquery
   
