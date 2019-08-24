@@ -5,6 +5,8 @@
 * 사용빈도 높은 태그
   * [HTML 태그]
   * [CSS 태그]
+  
+* [생활코딩 HTML 강의수강]
 
 ## JavaScript & Jquery
   
