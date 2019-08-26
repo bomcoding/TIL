@@ -6,17 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>WEB1 - CSS</title>
     <style>
-            a {
-                color:red;
-            }
-        </style>
+        a {
+            color:black; 
+            text-decoration: none;
+        }
+        h1{
+            font-size: 45px;
+            text-align: center;
+        }
+        .saw{
+            color: gray;
+        }
+        #active{/*class선택자와 id선택자가 동시에 있으면 id가 이긴다.*/
+            color: red;
+        } 
+    </style> <!-- style태그와 속성 -->
+        <!-- 같은 속성의 선택자라면 가장 마지막에 나오는 선택자가 우선순위가 높다.-->
+        <!-- 태그 선택자 < class선택자 < id선택자--> <!-- 포괄적인 태그선택자보다 구체적인 id선택자가 우선순위가 높은것. -->
 </head>
 <body>
     <h1><a href="index.html">WEB</a></h1>
     <ol>
-        <li><a href="html.html">HTML</a></li>
-        <li><a href="css.html">CSS</a></li>
-        <li><a href="javascript.html">Javascript</a></li>
+        <li><a href="html.html" class="saw">HTML</a></li> 
+        <li><a href="css.html" class="saw" id="active">CSS</a></li> <!-- 아이디의 값은 한번만 사용해야 한다.(유니크) -->
+        <li><a href="javascript.html">Javascript</a></li> 
     </ol>
     <h2>CSS</h2>
     <p>Cascading Style Sheets (CSS) is a style sheet language used for describing
