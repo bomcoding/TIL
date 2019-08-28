@@ -13,30 +13,59 @@
         h1{
             font-size: 45px;
             text-align: center;
+            border-bottom: 1px solid gray;
+            margin:0; padding:20px;
         }
+        body{
+            margin: 0;
+        }
+        ol{
+            border-right: 1px solid gray;
+            width: 100px;
+            margin: 0;
+            padding:20px;
+        }
+        #grid{
+            display: grid;
+            grid-template-columns: 150px 1fr;
+        }
+        #grid ol{
+            padding-left: 33px;
+        }
+        #grid #article{
+            padding-left:25px;
+        }
+        @media(max-width:800px){ /* @media쿼리의 중요성 */
+            #grid{
+            display: block;
+            }
+            ol{
+            border-right: none;
+            }
+            h1{
+                border-bottom: none;
+            }
+        } 
     </style>
 </head>
 <body>
     <h1><a href="index.html">WEB</a></h1>
+    <div id="grid"> 
     <ol>
         <li><button><a href="html.html">HTML</a></button></li>
         <li><button><a href="css.html">CSS</a></button></li>
         <li><button><a href="javascript.html">Javascript</a></button></li>
     </ol>
-    <!-- <h1><a href="index.html"><font color="red">WEB</font></a></h1>
-    <ol>
-        <li><a href="html.html"><font color="red">HTML</font></a></li>
-        <li><a href="css.html"><font color="red">CSS</font></a></li>
-        <li><a href="javascript.html"><font color="red">Javascript</font></a></li>
-    </ol> -->
-    <p>
-    <p>The World Wide Web (abbreviated WWW or the Web) is an information space where
-        documents and other web resources are identified by Uniform Resource Locators
-        (URLs), interlinked by hypertext links, and can be accessed via the Internet.[1]
-        English scientist Tim Berners-Lee invented the World      Wide Web in 1989. He wrote
-        the first web browser computer program in 1990 while employed at CERN in Switzerland.[2][3]
-        The Web browser was released outside of CERN in 1991, first to other research institutions
-        starting in January 1991 and to the general public on the Internet in August 1991.
-    </p>
+        <div id=article>
+            <p>The World Wide Web (abbreviated WWW or the Web) is an information space where
+                documents and other web resources are identified by Uniform Resource Locators
+                (URLs), interlinked by hypertext links, and can be accessed via the Internet.[1]
+                English scientist Tim Berners-Lee invented the World      Wide Web in 1989. He wrote
+                the first web browser computer program in 1990 while employed at CERN in Switzerland.[2][3]
+                The Web browser was released outside of CERN in 1991, first to other research institutions
+                starting in January 1991 and to the general public on the Internet in August 1991.
+            </p>
+        </div>
+    </div>
 </body>
 </html>

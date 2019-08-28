@@ -6,7 +6,7 @@
   * [HTML 태그]
   * [CSS 태그]
   
-* [생활코딩 HTML 강의수강](https://github.com/bomcoding/TIL/tree/master/HTML%2C%20CSS/LifeCoding%20Web%20Study)
+* [생활코딩 HTML/CSS 강의수강](https://github.com/bomcoding/TIL/tree/master/HTML%2C%20CSS/LifeCoding%20Web%20Study)
 
 ## JavaScript & Jquery
   
