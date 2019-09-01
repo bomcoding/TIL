@@ -9,15 +9,18 @@
 <body>
     <h1><a href="index.php">WEB</a></h1>
     <?php
+        $list = scandir('./data');
         $i = 0;
         //반복문
+            while($i < count($list)){
+                if($list[$i] != '.'){
+                    if($list[$i] != '..'){
+                echo "<li><a href=\"index.php?id=$list[$i]\">$list[$i]</a></li>\n";
+                }
+            }
+            $i = $i+1;
+        }
     ?>
-    <!-- <ol>
-        <li><a href="index.php?id=HTML">HTML</a></li>
-        <li><a href="index.php?id=CSS">CSS</a></li>
-        <li><a href="index.php?id=JavaScript">JavaScript</a></li>
-        <li><a href="index.php?id=PHP">PHP</a></li>
-    </ol> -->
     <h2>
         <?php
         if(isset($_GET['id'])){  //값이 있냐 없냐에 따라서 true or false로 값을 반환한다.
