@@ -50,11 +50,6 @@ function print_list(){
     <a href="create.php">create</a>
     <?php if(isset($_GET['id'])){?>  <!--id값이 있을때 update를 보여준다.-->
         <a href="update.php?id=<?= $_GET['id']/*echo와 같은 의미*/?>">update</a> 
-        <form action="delete_process.php" method="POST">
-            <input type="hidden" name="id" value="<?= $_GET['id']?>">
-            <!--delete일때는 a태그, 즉 link방식은 get방식임으로 위험하다. 때문에 post방식인 버튼방식으로 해야한다.-->
-            <input type="submit" value="delete">
-        </form>
     <?php } ?>
     <h2>
         <?php
@@ -64,5 +59,17 @@ function print_list(){
     <?php
         print_description();
     ?>
+    <form action="update_process.php" method="post">
+        <input type="hidden" name="old_title" value="<?=$_GET['id']?>"><!--값을 담아서 보내주기 숨김처리-->
+        <p>
+            <input type="text" name="title" placeholder="Title" value="<?php print_title();?>">
+        </p>
+        <p>
+            <textarea name="description" placeholder="Description"><?php print_description(); ?></textarea>
+        </p>
+        <p>
+            <input type="submit">
+        </p>
+    </form>
 </body>
 </html>
