@@ -3,7 +3,7 @@
 
 # Linux
 * Ubuntu
-  *[명령어]https://github.com/bomcoding/TIL/blob/master/Linux/Linux_Command)
+  * [명령어](https://github.com/bomcoding/TIL/blob/master/Linux/Linux_Command)
 
 ## HTML / CSS
 * 사용빈도 높은 태그
