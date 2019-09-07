@@ -1,0 +1,9 @@
+Study Linux day1_LifeCoding
+
+1. ViutualBox설치
+
+리눅스 명령어(1)
+ls :  현재 디렉토리의 파일 목록을 출력하는 명령어.
+ls -l : 목록 자세히 보기.
+pwd : 현재 위치하고 있는 디렉토리를 알려주는 명령어.
+mkdir *** : 새로 생성할 디렉토리명.
