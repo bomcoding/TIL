@@ -3,8 +3,8 @@
 
 # Linux
 * Ubuntu
-  * [Linux기초]()
-  * [Linux명령어](https://github.com/bomcoding/TIL/blob/master/Linux/Linux_Command)
+  * [Linux기초](https://github.com/bomcoding/TIL/blob/master/Linux/Linux_Basic.md)
+  * [Linux명령어](https://github.com/bomcoding/TIL/blob/master/Linux/Linux_Command.md)
 
 ## HTML / CSS
 * 사용빈도 높은 태그
