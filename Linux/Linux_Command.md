@@ -12,3 +12,10 @@
 * cp : 파일 복사.
 * mv : 파일 이동.
 * sudo : 관리자 권한.
+* apt : 설치 커멘드.
+	* apt-get install : 패키지 설치.
+	* apt-get update : 패키지 업데이트.
+	* apt-get upgrade :  프로그램 업그레이드.
+	* apt-get remove :  프로그램 삭제.
+	* apt-cache search : 설치하고자 하는 프로그램 찾을 때.
+ * wget : URL을 통해 다운로드
