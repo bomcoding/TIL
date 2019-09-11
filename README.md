@@ -1,10 +1,11 @@
 # Today I Learned(TIL)
 [![Blog](https://img.shields.io/badge/Blog-bomcoding.github.io-green.svg)](https://bomcoding.github.io/)
 
-# Linux
-* Ubuntu
-  * [Linux기초](https://github.com/bomcoding/TIL/blob/master/Linux/Linux_Basic.md)
-  * [Linux명령어](https://github.com/bomcoding/TIL/blob/master/Linux/Linux_Command.md)
+## JAVA
+
+## Spring / Spring boot
+
+## JavaScript & Jquery
 
 ## HTML / CSS
 * 사용빈도 높은 태그
@@ -16,16 +17,11 @@
 ## PHP
 * [생활코딩 PHP 강의수강](https://github.com/bomcoding/TIL/tree/master/PHP/LifeCoding%20PHP)
 
-## JavaScript & Jquery
-  
-
-## JAVA
-
-
-## Spring / Spring boot
-
+## Linux
+* [Ubuntu](https://github.com/bomcoding/TIL/blob/master/Linux/Ubuntu)
+  * [Linux기초](https://github.com/bomcoding/TIL/blob/master/Linux/Ubuntu/Linux_Basic.md)
+  * [Linux명령어](https://github.com/bomcoding/TIL/blob/master/Linux/Ubuntu/Linux_Command.md)
 
 ## AWS
-
 
 ## 개발도서
