@@ -19,3 +19,6 @@
 	* apt-get remove :  프로그램 삭제.
 	* apt-cache search : 설치하고자 하는 프로그램 찾을 때.
  * wget : URL을 통해 다운로드
+ * > : Redirection기호
+	* 1> : standard output - 데이터를 이동하는 기호.
+	* 2> : standard error - 실행하는 과정에서 발생한 데이터는 2>기호로 통해 이동.

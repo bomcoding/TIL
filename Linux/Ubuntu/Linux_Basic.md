@@ -7,3 +7,8 @@
 * nano 에디터 : 파일을 생성 및 수정 할 수 있는 에디터
 * 패키지 매니저 : apt
 * git : 버전관리 프로그램
+
+# IO Redirection
+* output
+* input
+* append

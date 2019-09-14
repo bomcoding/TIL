@@ -5,7 +5,7 @@
 
 ## Spring / Spring boot
 
-## JavaScript & Jquery
+## JavaScript / Jquery
 
 ## HTML / CSS
 * 사용빈도 높은 태그
