@@ -12,3 +12,5 @@
 * output
 * input
 * append
+
+# 쉘과 쉘스크립트
