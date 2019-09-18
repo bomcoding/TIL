@@ -18,7 +18,13 @@
 	* apt-get upgrade :  프로그램 업그레이드.
 	* apt-get remove :  프로그램 삭제.
 	* apt-cache search : 설치하고자 하는 프로그램 찾을 때.
- * wget : URL을 통해 다운로드
- * > : Redirection기호
-	* 1> : standard output - 데이터를 이동하는 기호.
-	* 2> : standard error - 실행하는 과정에서 발생한 데이터는 2>기호로 통해 이동.
+* wget : URL을 통해 다운로드
+* IO Redirection
+	* < : input - 화면에 입력을 위한 Redirection기호.
+		* standard input - 표준입력, (오른쪽)파일의 내용을 (왼쪽)파일에 입력한다.
+	* > : ouput - 화면에 출력을 위한 Redirection기호.
+		* 1> : standard output - 표준출력, 데이터를 이동하는 기호.
+		* 2> : standard error - 실행하는 과정에서 발생한 데이터는 2>기호로 통해 이동.
+	* >> : output append - Redirection 후 그 결과를 추가.
+	* << : input append - 여러 개의 정보를 한 파일에 다중입력(<<임의)
+	* /dev/null : 파일의 내용을 삭제
