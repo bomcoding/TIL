@@ -28,3 +28,7 @@
 	* >> : output append - Redirection 후 그 결과를 추가.
 	* << : input append - 여러 개의 정보를 한 파일에 다중입력(<<임의)
 	* /dev/null : 파일의 내용을 삭제
+* shell
+	* echo : 출력
+	* bash shell(기본탑재)
+	* zsh shell(설치)
