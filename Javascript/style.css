@@ -1,0 +1,45 @@
+a {
+    color:black; 
+    text-decoration: none;
+}
+h1{
+    font-size: 45px;
+    text-align: center;
+    border-bottom: 1px solid gray;
+    margin:0; padding:20px;
+}
+body{
+    margin: 0;
+}
+ol{
+    border-right: 1px solid gray;
+    width: 100px;
+    margin: 0;
+    padding:20px;
+}
+#grid{
+    display: grid;
+    grid-template-columns: 150px 1fr;
+}
+#grid ol{
+    padding-left: 33px;
+}
+#grid #article{
+    padding-left:25px;
+}
+@media(max-width:800px){ /* @media쿼리의 중요성 */
+    #grid{
+    display: block;
+    }
+    ol{
+    border-right: none;
+    }
+    h1{
+        border-bottom: none;
+    }
+} 
+/*
+<!-- style태그와 속성 -->
+<!-- 같은 속성의 선택자라면 가장 마지막에 나오는 선택자가 우선순위가 높다.-->
+<!-- 태그 선택자 < class선택자 < id선택자--> <!-- 포괄적인 태그선택자보다 구체적인 id선택자가 우선순위가 높은것. -->
+*/
