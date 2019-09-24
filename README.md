@@ -6,7 +6,7 @@
 ## Spring / Spring boot
 
 ## JavaScript / Jquery
-* [생활코딩 JavaScript 강의수강](https://github.com/bomcoding/TIL/tree/master/JavaScript/JavaScript_Basic.md)
+* [생활코딩 JavaScript 강의수강](https://github.com/bomcoding/TIL/blob/master/Javascript/javascript_Basic.md)
 
 ## HTML / CSS
 * 사용빈도 높은 태그
