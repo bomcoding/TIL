@@ -85,12 +85,12 @@
 	6. 인스턴스 초기화 블럭
 	7. 생성자 (instance)
 
-<pre><code>
-	class Time{
-		int hour;
-		int minute;
-		float second;
-		  }//사용자 정의타입(Time)에 여러 변수를 선언
-</code></pre>
+```
+class Time{
+	int hour;
+	int minute;
+	float second;
+	  }//사용자 정의타입(Time)에 여러 변수를 선언
+```
 
 *****
