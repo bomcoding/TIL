@@ -334,3 +334,40 @@ try→ catch→ finally순으로 실행
 ```
 
 *****
+
+
+## 람다와 스트림
+
+* 람다식
+```
+→ 메서드(함수)를 간단한 식으로
+→ 익명함수(객체)
+```
+```
+int max(int a, int b){         (int a, int b) -> 
+  return a > b ? a : b;  →   return a > b ? a : b;
+} 		                }
+```
+↓
+```
+(int a, int b) -> {return a>b ? a:b;} → (int a, int b) -> a>b ? a:b
+```
+↓
+```
+(int a, int b) -> a > b ? a : b → (a, b) -> a > b ? a : b
+```
+```
+-익명객체
+-함수형 인터페이스
+-메서드 참조(클래스 이름::메서드 이름)
+```
+* 스트림
+```
+생성
+중간연산 종류-skip(), limit( )
+		-filter( ), distinct( )
+		-sorted( )
+		-map( ), flatMap( )
+		-peek()
+최종연산 종류-forEach( ), forEachOrdered( )
+```
