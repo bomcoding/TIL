@@ -371,3 +371,69 @@ int max(int a, int b){         (int a, int b) ->
 		-peek()
 최종연산 종류-forEach( ), forEachOrdered( )
 ```
+
+## 입출력(I/O)
+
+* 스트림
+```
+→ 데이터가 입출력 되는 연결통로
+→ 입출력을 동시에 수행하려면, 2개의 스트림 필요
+```
+*바이트기반 스트림
+```
+→ 데이터를 바이트(byte)단위로 주고 받음
+	* InputStream, OutputStream
+		→ 바이트기반 스트림의 최고조상
+	* ByteArrayInputStream, ByteArrayOutputStream
+		→ 바이트배열에 데이터를 입출력하는 스트림
+	* FileInputStream, FileOutputStream
+		→ 파일에 데이터를 입출력하는 스트림
+```
+* 바이트기반 보조스트림
+```
+→ 독립적으로 입출력을 수행못함(기반스트림 필요)
+FilterInputStream, FilterOutputStream
+→ 모든 바이트기반 보조스트림의 최고조상
+BufferedInputStream, BufferedOutputStream
+→ 입출력을 효율을 높이기 위해 버퍼를 사용
+DataInputStream, DataOutputStream
+→ 기본형 단위로 읽고 쓰는 보조스트림
+```
+* 문자기반 스트림
+```
+→ 입출력 단위가 문자인 스트림
+	* Reader, Writer
+		→ 문자기반 스트림의 최고조상
+	* FileReader, FileWriter
+		→ 텍스트 파일의 입출력에 사용
+	* PipedReader, PipedWriter
+		→ 쓰레드간의 통신에 사용
+	* StringReader, StringWriter
+		→ 메모리 입출력에 사용
+```
+* 문자기반 보조스트림
+```
+	* BufferedReader, BufferedWriter
+		→ 입출력 효율을 위해 버퍼를 사용
+		→ 라인(line)단위 입출력이 편리
+	* InputStreamReader, OutputStreamWriter
+		→ 바이트기반스트림을 문자기반스트림처럼 사용하게 해준다.
+		→ 인코딩을 변환하여 입출력 할 수 있게 해준다.
+```
+* 표준 입출력과 File
+```
+	* 표준입출력-System.in, System.out, System.err
+		→ 콘솔을 통한 데이터의 입출력을 뜻한다.
+		→ JVM이 시작되면서 자동적으로 생성된다.
+	* RandomAccessFile
+		→ 하나의 스트림으로 파일에 입력과 출력을 모두 수행 가능한 스트림
+		→ 다른 스트림과 달리 Object의 자손이다.
+	* File(교재 참고)
+```
+* 직렬화
+```
+→ 객체를 연속적인 데이터로 변환. 반대는 ‘역직렬화’.
+→ 객체의 인스턴스변수들의 값을 일렬로 나열.(저장을 위해)
+	* ObjectInputStream, ObjectOutputStream
+		→ 객체를 직렬화해 입출력하게 해주는 보조스트림
+```
