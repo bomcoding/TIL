@@ -380,8 +380,8 @@ int max(int a, int b){         (int a, int b) ->
 → 입출력을 동시에 수행하려면, 2개의 스트림 필요
 ```
 *바이트기반 스트림
+	→ 데이터를 바이트(byte)단위로 주고 받음
 ```
-→ 데이터를 바이트(byte)단위로 주고 받음
 	* InputStream, OutputStream
 		→ 바이트기반 스트림의 최고조상
 	* ByteArrayInputStream, ByteArrayOutputStream
@@ -390,18 +390,18 @@ int max(int a, int b){         (int a, int b) ->
 		→ 파일에 데이터를 입출력하는 스트림
 ```
 * 바이트기반 보조스트림
+	→ 독립적으로 입출력을 수행못함(기반스트림 필요)
 ```
-→ 독립적으로 입출력을 수행못함(기반스트림 필요)
-FilterInputStream, FilterOutputStream
-→ 모든 바이트기반 보조스트림의 최고조상
-BufferedInputStream, BufferedOutputStream
-→ 입출력을 효율을 높이기 위해 버퍼를 사용
-DataInputStream, DataOutputStream
-→ 기본형 단위로 읽고 쓰는 보조스트림
+	FilterInputStream, FilterOutputStream
+		→ 모든 바이트기반 보조스트림의 최고조상
+	BufferedInputStream, BufferedOutputStream
+		→ 입출력을 효율을 높이기 위해 버퍼를 사용
+	DataInputStream, DataOutputStream
+		→ 기본형 단위로 읽고 쓰는 보조스트림
 ```
 * 문자기반 스트림
+	→ 입출력 단위가 문자인 스트림
 ```
-→ 입출력 단위가 문자인 스트림
 	* Reader, Writer
 		→ 문자기반 스트림의 최고조상
 	* FileReader, FileWriter
@@ -436,4 +436,60 @@ DataInputStream, DataOutputStream
 → 객체의 인스턴스변수들의 값을 일렬로 나열.(저장을 위해)
 	* ObjectInputStream, ObjectOutputStream
 		→ 객체를 직렬화해 입출력하게 해주는 보조스트림
+```
+
+## 네트워킹
+
+* 클라이언트/서버
+	→ 서비스를 제공하는 것은 서버, 제공받는 것은 클라이언트.
+	```
+	* 서버기반 모델
+		→ 안정적인 서비스 제공이 가능
+		→ 공유데이터의 관리와 보안이 용이
+		→ 서버구축비용과 관리비용이 높음
+	```
+	* P2P기반 모델
+	```
+		→ 서버구축, 운용비용 절감
+		→ 자원활용 극대화
+		→ 자원관리 어려움
+		→ 보안이 취약
+	```
+* IP주소
+```
+→ 컴퓨터(호스트)를 구별하는 고유한 주소값
+→ IP주소는 네트워크주소와 호스트주소로 구성
+→ IP주소와 서브넷마스크를 ‘&’연산하면 네트워크 주소를 얻음
+```
+* URL - 파일경로
+```
+→ 인터넷 서버들의 자원에 접근 할 수 있는 주소.
+→ 1)프로토콜, 2)호스트명, 3)포트번호, 4)경로명, 5)파일명, 6)쿼리, 7)참조 로 구성
+```
+* 소켓 프로그래밍
+```
+→ 소켓을 이용한 통신 프로그래밍
+→ 소켓 : 프로세스간 통신에 사용되는 양쪽 끝단.
+```
+* OSI 7계층
+```
+물리계층 → 데이터링크계층 → 네트워크계층 
+→ 전송계층 → 세션계층 → 표현계층 → 응용계층
+```
+* TCP/UDP
+```
+항목			TCP							UDP
+
+연결방식	-연결기반					-비연결기반
+			-1:1 통신방식				-1:1, 1:n, n:n 통신방식
+
+특징		-데이터의 경계 구분안함		-데이터의 경계 구분함
+			-신뢰성 있는 데이터 전송	-데이터 수신여부 미확인
+			-UDP보다 전송속도 느림		-TCP보다 전송속도 빠름
+```
+* 서버/클라이언트 실행 시 주의사항
+```
+→ 서버가 구동중이어야만 클라이언트가 접속 할 수 있다.
+→ 클라이언트 소스코드에서 접속하고 싶은 ip주소를 입력해야 한다. ip주소는 cmd에서 ip config입력해 알 수있다.
+→ 실행전에 반드시 Run configuration에서 Arguments안에 값을 넣어야 한다. 그 값은 기본 배열(arr[])의 값, 닉네임이다.
 ```
