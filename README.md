@@ -12,8 +12,8 @@
 
 ## HTML / CSS
 * 사용빈도 높은 태그
-	* [HTML 태그]
-	* [CSS 태그]
+	* [HTML 태그](https://github.com/bomcoding/TIL/blob/master/HTML%2C%20CSS/HTML_Tag)
+	* [CSS 태그](https://github.com/bomcoding/TIL/blob/master/HTML%2C%20CSS/CSS_Tag)
   
 * [생활코딩 HTML/CSS 강의수강](https://github.com/bomcoding/TIL/tree/master/HTML%2C%20CSS/LifeCoding%20Web%20Study)
 

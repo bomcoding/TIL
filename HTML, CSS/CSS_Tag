@@ -1,0 +1,211 @@
+스타일 모음 ( CSS )
+
+position : absolute - 객체의 포지션 : absolute(절대좌표)
+position : relative- 객체의 포지션 : relative(상대좌표)
+top - 객체의 y좌표를 설정
+left - 객체의 x좌표를 설정
+border - 객체의 보더(두께)를 지정
+background - 객체의 배경이미지를 지정
+font-size - 객체의 폰트사이즈를 지정
+width - 객체의 너비를 지정
+height - 객체의 높이를 지정
+padding - 객체내부의 패딩을 지정 패딩이 0이면, 객체안의 내용이 틀에 꽉붙게 된다
+overflow : hidden - 레이어안의 내용이 레이어의 크기보다 넘칠때 auto이면 스크롤바가 생기고 hidden이면 생기지 않는다
+z-index - 레이어의 위상을 지정, 레이어가 여러겹의 층으로 쌓을때 z-index 지정으로 서로의 위치를 바꿀 수 있다.
+display - 객체의 보임속성을 지정
+scroll - 객체의 내용이 한페이지 혹은 레이어의 크기보다 클때 스크롤이 필요해진다
+marquee - 마키 태그를 이용하면 손쉽게 움직이는 문자나 이미지를 만들 수 있다.
+cellpadding - 테이블에서 셀의 내용과 보더간의 거리
+cellspacing - 테이블에서 셀간격
+bgcolor - 배경색지정
+margin - 여백
+align - 정렬
+colspan - 테이블에서 특정셀을 가로로 몇칸 병합할지 설정
+overflow-y:hidden;
+[font-style]
+
+'font-style: normal;'
+'font-style: italic;'
+'font-style: oblique;'
+[font-weight]
+
+font-weight: normal;
+font-weight: bold;
+font-weight: bolder;
+font-weight: lighter;
+font-weight: 100;
+font-weight: 200;
+ 
+
+[font-size]
+
+font-size: 12pt;
+font-size: 16px;
+font-size: 0.86cm;
+font-size: 8.6mm;
+font-size: 0.34in;
+font-size: 200%;
+[font-variant]
+
+font-variant: normal;
+font-variant: small-caps;
+[text-align]
+
+text-align: left;
+text-align: justify;
+[text-indent]
+
+text-indent: 5px;
+text-indent: 3em;
+text-indent: 5cm;
+[text-decoration]
+
+text-decoration: none;
+text-decoration: underline;
+text-decoration: overline;
+text-decoration: line-through;
+text-decoration: line-through overline underline;
+text-decoration: blink;
+[text-transform]
+
+text-transform: none;
+text-transform: uppercase;
+text-transform: lowercase;
+text-transform: capitalize;
+[letter-spacing]
+
+letter-spacing: 1em;
+[word-spacing]
+
+word-spacing: 1em;
+[color]
+
+color: navy;
+color: #369369;
+color: rgb(80%,80%,80%);
+color: rgb(111,111,999);
+[background-color]
+
+background-color: gray;
+background-color: #EEEEEE;
+background-color: rgb(80%,80%,80%);
+[background-image]
+
+background-image: url(list1.gif);
+[background-repeat]
+
+background-repeat: repeat;
+background-repeat: repeat-x;
+background-repeat: repeat-y;
+background-repeat: no-repeat;
+ [background-position]
+
+background-position: 10% 10%;
+background-position: 1cm 1cm;
+background-position: top;
+background-position: center;
+background-position: right bottom;
+[background-attachment]
+
+background-attachment: scroll;
+background-attachment: fixed;
+[background]
+
+ background: url(list1.gif) yellow no-repeat top left;
+[padding]
+
+padding: 0 0 0 0;
+padding: 50px;
+[margin]
+
+margin: 0; 
+margin: 50px 50px 50px 50px;
+margin: 0 0 0 -30px;
+[border-style]
+
+border-style: none;
+border-style: solid;
+border-style: dotted;
+border-style: dashed;
+border-style: double;
+I"border-style: groove;
+border-style: ridge;
+border-style: inset;
+border-style: outset;
+border-style: solid dashed dotted outset;
+[border-width]
+
+border-width: 1px 1px 1px 1px;
+border-width: 0 0 0 0; border-style: solid;
+border-width: 1px 1px 1px 1px; border-style: solid;
+border-width: 3px; border-style: solid;
+border-width: 3mm; border-style: solid;
+border-width: 1px 1cm 1mm 1in; border-style: solid;
+border-width: thin; border-style: solid;
+border-width: medium; border-style: solid;
+border-width: thick; border-style: solid;
+[border]
+
+border: 1px;
+border: #999999;
+border: solid;"
+border: solid #999999;
+border: 1px solid #999999;
+[float]
+
+float: left;
+float: right;
+float: none;
+[visibility]
+
+visibility: visible;
+visibility: hidden;
+visibility: collapse;
+[list-style-type]
+
+list-style-type: default;
+list-style-type: disc;
+list-style-type: circle;
+list-style-type: square;
+list-style-type: decimal;
+list-style-type: decimal-leading-zero;
+list-style-type: lower-roman;
+list-style-type: upper-roman;
+list-style-type: lower-greek;
+list-style-type: lower-alpha;
+list-style-type: upper-latin;
+list-style-type: none;
+[list-style-image]
+
+list-style-image: url(list1.gif);
+list-style-image: url(list2.gif);
+[list-style-position]
+
+list-style-position: inside;
+list-style-position: outside;
+[list-style]
+
+list-style: url(list1.gif) inside;
+list-style: square outside;
+list-style: url(list1.gif);
+list-style: square;
+list-style: inside;
+[cursor]
+
+cursor: auto;
+cursor: crosshair;
+cursor: default;
+cursor: pointer;
+cursor: move;
+cursor: e-resize;
+cursor: ne-resize;
+cursor: nw-resize;
+cursor: n-resize;
+cursor: se-resize;
+cursor: sw-resize;
+cursor: s-resize;
+cursor: w-resize;
+cursor: text;
+cursor: wait;
+cursor: help;
+cursor: url(list1.gif);
