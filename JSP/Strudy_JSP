@@ -1,0 +1,187 @@
+11장 EL(Expression Language) - JSP 2.0부터 추가
+
+EL은 JSTL 1.0 규약에 소개된 내용으로 JSP 2.0부터 JSP에 포함되고, JSP2.3에 대응되는 것은 EL3.0이다.
+EL은 값을 표현하는데 사용되며, JSP의 <jsp:useBean>, <jsp:getProperty>를 보완한다.
+
+EL의 기능
+- JSP의 4가지 기본객체가 제공하는 영역의 속성사용
+- 수치연산, 관계연산, 논리연산자 제공
+- 자바 클래스 메서드 호출기능 제공
+- 쿠키, 기본 객체의 속성 등 JSP를 위한 표현 언어의 기본 객체 제공
+- EL3.0부터는 람다식, 스트림 API, static메서드 실행도 가능
+
+EL을 사용하면 보다 간결한 코드로 값을 표현할 수 있다.
+
+ 	<%=member.getAddress().getZipcode()%>
+ 	$(member.address.zipcode}
+
+EL의 사용예 - <%%>안에는 사용못하고 태그에만 사용가능(액션태그 포함)
+
+ 	<jsp:include page="/module/${skin.id}/header.jsp" flush="true"/>
+     <em>${sessionScope.member.id}</em>님 환영합니다.
+
+${expr}과 #{expr}의 차이 - 값을 생성하는 시점이 다르다. 앞에 escape문자를 붙이면 \${expr} 그대로 출력됨
+JSP2.1부터 #{expr}을 추가로 지원. JSF(Java Server Faces)에서 유래
+[범균290]
+- Servlet2.3의 web.xml - EL을 지원않음.
+- Servlet2.4의 web.xml - #{expr}을 지원않음.
+- Servlet2.5+의 web.xml - ${expr}, #{expr} 지원
+
+ 	${expr} - 구문이 분석되는 시점에 값이 계산된다.
+ 	#{expr} - 실제로 값이 사용될 때 값이 계산된다.
+
+#{expr}은 곧바로 값이 생성되는 것이 아니므로 JSP의 템플릿 텍스트에서는 사용할 수 없다.
+
+	#{sessionScope.name.id}님 환영합니다. // 에러 발생
+
+#{expr}은 JSTL의 <c:set>, <c:out>과 같이 defered expression을 허용하는 태그의 속성에만 위치할 수 있다.
+#{expr}과 같은 deferred expression은 사실 잘 사용되지 않는다.
+
+   <% m.setName("이름1"); %>
+   <c:set var="name" value="${m.name}"/>  <--- 이 시점에 값이 계산된다. <c:set>은 변수에 값을 대입할때 사용
+   <% m.setName("이름2"); %>
+	${name}  //  이름1
+
+그러나 #{expr}은 값이 사용될 때 값이 계산되므로 위의 코드와 다른 결과를 얻는다.
+
+   <% m.setName("이름1"); %>
+   <c:set var="name" value="#{m.name}"/>  <--- 이 시점에 값이 계산되지 않는다.
+   <% m.setName("이름2"); %>
+	${name}  //  이름2  <--- 이 시점에 값이 계산된다. #{name}이 아님에 주의
+
+
+EL의 타입과 리터럴 - 각 타입간의 변환은 규칙에 따라 자동으로
+1. Boolean타입 : true, false
+2. 정수타입(Long)
+3. 실수타입(Double)
+4. 문자열 타입
+5. 널 타입 : null
+
+
+EL에서 사용할 수 있는 기본 객체 - pageContext를 제외하면 모두 Map객체이다.
+pageContext
+pageScope
+requestScope
+sessionScope
+applicationScope
+param             	- request.getParameter(이름)
+paramValues   	- request.getParameterValues(이름)
+header           	- request.getHeader(이름)
+headerValues  	- request.getHeaders(이름)
+cookie            	- request.getCookies()
+initPram          	- application.getInitParameter(이름)
+
+
+[예제:chap11/useELObject.jsp]
+요청URI:${pageContext.request.requestURI}<br>
+request의 name속성:${requestScope.name}<br>
+쿠키 : ${cookie.ID.value}
+파라미터 code:${param.code}   <--- 파라미터 code가 존재하지 않으면 아무것도 출력하지 않음.(null 출력 안함)
+
+위의 예제에서 code라는 파라미터 값이 존재하지 않으면, 즉 null인 경우, 출력되지 않는다.
+이처럼 EL은 값이 존재하지 않는 경우, 아무것도 출력하지 않는다.
+
+  ${pageScope.NAME}   // pageScope에서 NAME이라는 속성을 찾는다.
+
+영역을 지정하지 않고 속성이름만 적는 경우, 4개의 영역을 차례대로 검색해서 찾는다.
+
+  ${NAME}	// PAGE, REQUEST, SESSION, APPLICATION(좁은 범위에서 넓은 범위로)의 순서로 검사
+
+
+p.258
+1. 수치연산자 - EL에서 제공하는 연산자는 +,-,*,/,%와 부호연산자(-), div와 mod도
+${"10"+1}  	// "101"이 아니라 11이 된다. "10"을 Long으로 변환한 뒤에 연산
+${"일"+10}	// 에러. "일"을 숫자로 변환할 수 없어서 에러남.(변환이나 연산에 실패하면 예외발생)
+${null+1}  	// null이 0으로 변환되어 1을 결과로 얻는다.
+${3/2}   	// 나누기에서는 둘다 Double로 변환후 연산. 결과는 1.5
+
+산술연산의 규칙처럼 나름대로의 규칙을 가지고 있다.
+1. 둘다 null이면 Long타입의 0을 반환
+2. 둘 중의 큰타입으로 변환
+ - Long보다 작은 타입은 Long으로 변환
+ - 정수와 실수 연산에서 Double로 변환(단, 정수가 BigInteger인 경우는 BigDecimal로 변환.)
+3. 수치연산시에 변환이나 연산에 실패하면 예외를 발생시킨다.
+2. 비교연산자 - 문자열 비교에는 String.compareTo()가 사용됨
+${strValue=='2004'}  //  strValue.compareTo("2004")==0  	홑따옴표와 쌍따옴표의 차이는? 둘다 혼용가능?
+==   eq
+!=	ne
+<	lt
+>	gt
+<=   le
+>=   ge
+
+3. 논리 연산자
+&&   and
+||	or
+!  	not
+
+4. empty연산자 - 빈 객체인지 검사할때 사용.
+ - 피연산자가 null이면, true
+ - 피연산자가 빈 컬렉션이면, true
+ - 피연산자가 빈 배열(빈 문자열도)이면, true
+ - 그 외에는 false
+
+5. 삼항 연산자도 사용가능
+
+6. 문자열 연결 - +=
+${"문자"+="열"+="연결"}  // "문자열연결"
+
+7. 컬렉션과 객체
+- List의 경우
+<c:set var="vals" values="${[1,2,3,4,5]}"/>   // ${[1,2,3,4,5]} 는 List(요소의 타입은 Long)
+${myfunc:sum(vals)}
+${vals[2]} // List의 세번째 요소. 3
+
+- Map의 경우
+<c:set var="mem" value="${ {'name':'홍길동', 'age':20} }"/>
+${mem.name}	// 홍길동
+${mem.age}      // 20
+
+- Set의 경우
+<c:set var="hangul" value="${{'가','나','다'}}"
+${hangul}
+
+8. 세미콜론 연산자 - C언어의 콤마(,)연산자와 동일
+${1+1; 10+10}	// 두번째 식의 결과인 20이 출력됨.
+
+
+9. 할당 연산자
+원래는 아래의 둘 중의 한가지 방법을 사용해야했다.
+<% request.setAttribute("var1", 10L);%>
+<c:set var="val1" value="${10}"/>
+
+위의 문장들 대신. EL3.0부터 제공되는 할당연산자를 사용하면 아래와 같이 할 수 있다.
+
+${val1 = 10}  	// 변수 val1에 10을 저장하고, val1의 값을 출력
+
+만일 할당 연산후에 변수의 값을 출력하기 원하지 않는다면 아래와 같이 세미콜론 연산자를 사용하면 된다.
+
+${hangul=['가','나','다']; '' }   // hangul에 List를 저장하고, 빈문자열''을 출력한다. 즉 아무것도 출력하지 않는다.
+${hangul[0]}      // List의 첫번째 요소만 출력
+
+
+p.266
+EL에서 메서드 호출하기
+JSP2.2/EL2.2부터 EL에서 객체의 메서드를 직접호출할 수 있다. 이전 버젼에서는 컴파일 에러
+<%
+   Thermometer t = new Thermometer();  // 객체를 생성해서
+   request.setAttribute("t", t);            	// EL에서 사용할 수 있도록 request영역에 저장.
+%>
+
+${t.setCelsius("seoul", 27.3)}   // EL에서 메서드 호출
+
+
+EL에서 static메서드 호출하기 - p.273
+앞서 배운 내용을보면 EL에서 static메서드를 호출하려면
+TLD파일 작성, web.xml도 설정. @taglib도 설정해야했는데...
+
+EL3.0부터는 JSP에서 코드만 작성하면 된다.(TLD파일작성, web.xml설졍 필요없음)
+<%@ page import="util.FormatUtil"%>
+...
+가격은 <b>${FormatUtil.number(price, '#,##0')}</b>원 입니다.  // static메서드 호출
+
+
+EL을 비활성화하기 - p.287
+1. web.xml에서 비활성화 옵션 지정하기
+2. JSP페이지에서 비활성화 옵션 지정하기
+3. web.xml파일을 서블릿2.3 또는 2.4에 맞게 작성하기
