@@ -1,23 +1,25 @@
 # SQL의 정석
 
-데이터베이스 특징
+* 데이터베이스 특징
+```
 → 데이터의 대규모 저장소.
 → 한 조직체의 운영데이터와 설명(스키마, 메타데이터)를 포함
-
-데이터베이스 목적 및 DBMS장점
-→ 데이터 중복의 최소화*
+```
+* 데이터베이스 목적 및 DBMS장점
+```
+→ 데이터 중복의 최소화★
 → 데이터 공유, 보안유지
-→ 데이터 무결성**
+→ 데이터 무결성★★
 → 데이터 관리 표준화
 → 자료 접근성 및 응답성 향상
-
+```
 
 관계형 데이터베이스(RDB)
 → TABLE은 행과 열로 구성
 → Column들은 데이터 무결성을 보장받아야 함
 → RDBMS가 전체 데이터베이스(RDB)를 관리
 
-데이터베이스 용어***
+데이터베이스 용어★★★
 Table
 행과 열의 조합으로 구성된 기본 저장단위
 Row
@@ -47,7 +49,7 @@ SYSTEM (주로 사용)
 → 모든 시스템 권한 소유
 → 테이블을 생성하거나, 일반 데이터를 insert해서는 안되며, 반드시 데이터베이스를 관리하기 위해 사용.
 
-데이터 타입***
+데이터 타입★★★
 VARCHAR2(size)
 가변길이 문자값. 최고길이 1, 최대길이 2000
 NUMBER
@@ -73,35 +75,34 @@ SQL명령어
 부류
 명령어
 설명
-RETRIEVE***
+RETRIEVE★★★
 SELECT
 원하는 데이터를 검색
-DML***
+DML★★★
 INSERT
 UPDATE
 DELETE
 -테이블에 새로운 행을 삽입
 -테이블에 있는 행을 수정
 -테이블로부터 행을 삭제
-DDL***
+DDL★★★
 CREATE, AKTER,
 DROP, RENAME,
 TRUNCATE, COMMENT
 구조를 만들거나, 구조변경, 삭제 등 데이터 구조 명령어
 TANSACTION
-**
 COMMIT
 ROLLBACK
 SAVEPOINT
 논리적인 작업단위, DML에 의해 조작된 결과를 다루는 명령어
-DCL***
+DCL★★★
 GRANT
 REVOKE
 DB에 접근하고 사용하도록 권한을 주고받는 명령어
 
-데이터 검색*
+데이터 검색★
 전체 데이터 검색
-→ SELECT *
+→ SELECT 
 특정 컬럼 검색
 → 컬럼 사이를 ,(콤마)로 구분
 산술식을 이용한 검색
@@ -114,7 +115,7 @@ ALIAS부여
 → SELECT DISTINCT [컬럼명]
 정렬순서 지정(오름차, 내림차 데이터 정렬)
 → ORDER BY [칼럼or표현식] (ASC or DESC);
-WHERE절 연산자**
+WHERE절 연산자
 논리비교연산자
 -  !=, <>, ^= (같지 않으면..이라는 뜻)
 SQL비교연산자
@@ -125,7 +126,7 @@ SQL비교연산자
 // title = null (X)   title is not null (O)
 AND, OR (그리고, 또는)
 
-문자형 함수*
+문자형 함수
 UPPER
 모두 대문자로
 LPAD(왼출력)
@@ -151,7 +152,7 @@ LENGTH
 REPLACE
 바꿀문자로 변경
 
-숫자형 함수*
+숫자형 함수
 함수
 사용목적
 POWER
@@ -169,7 +170,7 @@ MOD
 CHR
 ASCII해당 문자구함
 
-날짜형 함수*
+날짜형 함수
 SYSDATE
 현재 날짜, 시간
 ADD_MONTHS
@@ -193,7 +194,7 @@ TRUNC
 숫자 반환
 두 날짜사이의 차이를 숫자로 계산
 
-변환형 함수*
+변환형 함수
 TO_CHAR(문자값, ‘형식’)
 숫자나 날짜를 문자열로 변환
 TO_NUMBER(문자값)
@@ -201,7 +202,7 @@ TO_NUMBER(문자값)
 TO_DATE(문자값, ‘형식’)
 문자를 날짜로 변환
 
-그룹 함수*
+그룹 함수
 함수
 사용목적
 MIN(a)
@@ -220,10 +221,10 @@ VARIANCE(a)
 a의 분산
 *COUNT(*)를 제외한 모든 그룹함수는 null값을 고려하지 않는다.
 
-GROUP BY와 HAVING**
+GROUP BY와 HAVING
 → GROUP BY : 전체데이터를 소그룹으로 나눌 칼럼을 명시
 → HAVING : GROUP에 대한 조건을 기술 (WHERE 대신)
-JOIN***
+JOIN
 → 하나 이상의 테이블로 연관된 데이터를 검색해오는 방법
 Equijoin(InnerJoin)
 등가조인. 칼럼간의 값들이 일치할 경우에 사용.
@@ -234,7 +235,7 @@ OuterJoin(+)연산자
 Self Join
 같은 테이블의 행들을 join하고자 할때 사용.
 
-SET연산자*
+SET연산자
 UNION
 각 쿼리결과의 합집합
 UNION ALL
@@ -244,7 +245,7 @@ INTERSECT
 MINUS
 첫번째 쿼리와 두번째 쿼리결과의 차집합
 
-SubQUERY**
+SubQUERY
 → SELECT문 안에 포함된 또다른 SELECT문장
 → 괄호로 묶여있어야 한다.
 → 구문에서는 ORDER BY절을 포함할 수 없다.
@@ -252,18 +253,18 @@ SubQUERY**
 → 단일행 연산자(=,>,>=,<,<=,<>)는 전달되는 행이 하나일 때.
 → 복수행 연산자(IN, NOT IN)는 전달되는 행이 여러개일 때.
 
-Constraint(테이블 제약조건)- 무결성 유지를 위함.***
+Constraint(테이블 제약조건)- 무결성 유지를 위함.
 NOT NULL*
 컬럼이 null을 가질 수 없다.(필수값)
 UNIQUE(유일한)*
 모든 행에서 고유한 값을 가져야 한다.
 PRIMARY KEY(기본키)
-***
+
 → 각 행을 유일하게 구별
 → 테이블에 단하나만 허용
 → NOT NULL+UNIQUE 자동생성
 FOREIGN KEY(참조키)
-***
+
 → 컬럼이나 컬럼의 조합을 참조
 → 부모테이블의 값과 일치 or null이어야 함
 → 참조하려는 타입이 PK여야 함
@@ -271,7 +272,7 @@ FOREIGN KEY(참조키)
 CHECK
 컬럼값이 반드시 참이어야 하는 조건
 
-TRANSACTION CONTROL**
+TRANSACTION CONTROL
 → commit하기 전에는 rollback으로 savepoint까지 되돌릴 수 있다.
 명시적 트랜잭션 제어명령(수동)
 COMMIT
@@ -287,7 +288,8 @@ ROLLBACK
 DDL, DCL명령을 실행하면 자동 commit
 명시적 실행을 하지 않고 정상종료하면 자동 commit
 ROLLBACK
-SQL* Plus의 비정상 종료, 시스템 실패시 자동rollback
+SQL 
+Plus의 비정상 종료, 시스템 실패시 자동rollback
 
 COMMIT, ROLLBACK이전의 상태
 → buffer에만 영향을 받았기 때문에 이전 상태로 복구가능
@@ -329,7 +331,7 @@ Role_(사용자에게 허가 할 수 있는 Privileges의 그룹)*
 → 사용자는 Role에 Role을 부여할 수도 있다.
 ex) CREATE ROLE role이름;
 
-SEQUENCE*
+SEQUENCE
 → Primary key(기본키)값을 생성하기 위해 사용
 → 자동으로 Unique number(고유숫자)를 생성
 → 공유가능한 Object
@@ -339,7 +341,7 @@ SEQUENCE*
 → currval은 현재 sequence값 포함
 → currval은 반드시 nextval사용 후에 참조
 
-인덱스(index)****
+인덱스(index)★★★★
 → 데이터를 좀더 빠르게 검색하기 위해 사용하는 Object
 → OracleServer가 최적화 방법에 따라 인덱스를 골라 사용함
 → OracleServer가 index를 자동으로 사용하고 유지보수함
@@ -347,19 +349,19 @@ SEQUENCE*
 → 논리적, 물리적 테이블과는 독립적
 → 자동 생성되기도 하고 사용자 정의로 만들기도 함
 → 테이블 각 행에 대응하는 주소(ROWID)와 인덱스 컬럼값으로 구성
-index가 필요할 때*
+index가 필요할 때
 → 조건절이나 조인조건에서 컬럼을 자주 이용 할 때
 → 컬럼이 넓은 범위 값을 가질 때
 → 많은 NULL값을 갖는 컬럼일 때
 → 테이블에 데이터가 많고, 조회되는 행의 수가 전체의 10~15%정도 일때
-index가 존재하지만 사용되지 않은 경우**
+index가 존재하지만 사용되지 않은 경우
 → INDEXED 컬럼이 비교되기 전에 변형이 일어난 경우
 → 부정(NOT, <>)으로 조건을 기술한 경우
 → INDEXED 컬럼이 NULL로 비교할 경우(NULL에 저장X)
 → Optimizer의 취사선택(힌트_주석으로 넣어야 실행한다.)
 	※index는 적절히 사용해야 한다. 많다고 좋은 것이 아님.
 
-CORRELATED SUBQUERY(상관쿼리)**_교제 참고
+CORRELATED SUBQUERY(상관쿼리)_교제 참고
 
 View
 → 테이블이나 뷰를 기초로 한 가상의 테이블
