@@ -13,42 +13,36 @@
 → 데이터 관리 표준화
 → 자료 접근성 및 응답성 향상
 ```
-
-관계형 데이터베이스(RDB)
+* 관계형 데이터베이스(RDB)
+```
 → TABLE은 행과 열로 구성
 → Column들은 데이터 무결성을 보장받아야 함
 → RDBMS가 전체 데이터베이스(RDB)를 관리
-
-데이터베이스 용어★★★
-Table
-행과 열의 조합으로 구성된 기본 저장단위
-Row
-Column들의 값의 조합
-Column
-Table상에서 단일 종류의 데이터를 의미
-Field
-Row와 Column교차점에 위치, 값을 저장가능
-Primary Key
-변하지 않는 Column. NULL허용 x
-Foreign key
-같거나 다른 Table을 ‘참조’하는 단일 Column
-View
-부분집합으로 논리적이고 가상적인 Table
-Sequence
-자동으로 고유한 숫자값을 생성. 기본키 값 생성
-index
-쿼리(Query) 속도를 향상
-Synonym
-Object에 대한 또다른 이름으로 Alias역할
-SQL (Structured Query Language)
+```
+* 데이터베이스 용어★★★
+```
+Table : 행과 열의 조합으로 구성된 기본 저장단위
+Row : Column들의 값의 조합
+Column : Table상에서 단일 종류의 데이터를 의미
+Field : Row와 Column교차점에 위치, 값을 저장가능
+Primary Key : 변하지 않는 Column. NULL허용 x
+Foreign key : 같거나 다른 Table을 ‘참조’하는 단일 Column
+View : 부분집합으로 논리적이고 가상적인 Table
+Sequence : 자동으로 고유한 숫자값을 생성. 기본키 값 생성
+index : 쿼리(Query) 속도를 향상
+Synonym : Object에 대한 또다른 이름으로 Alias역할
+```
+* SQL (Structured Query Language)
+```
 → DB서버에 명령을 내리기 위한 언어.(ANSI에서 책정한 표준)
-
-Oracle DB의 기본계정
+```
+* Oracle DB의 기본계정
+```
 SYSTEM (주로 사용)
 → Oracle DB를 관리할 때 사용하는 (DBA)계정
 → 모든 시스템 권한 소유
 → 테이블을 생성하거나, 일반 데이터를 insert해서는 안되며, 반드시 데이터베이스를 관리하기 위해 사용.
-
+```
 데이터 타입★★★
 VARCHAR2(size)
 가변길이 문자값. 최고길이 1, 최대길이 2000
