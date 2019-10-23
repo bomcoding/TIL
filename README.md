@@ -25,6 +25,7 @@
 	* [Linux기초](https://github.com/bomcoding/TIL/blob/master/Linux/Ubuntu/Linux_Basic.md)
 	* [Linux명령어](https://github.com/bomcoding/TIL/blob/master/Linux/Ubuntu/Linux_Command.md)
 
-## AWS
+## Google Cloud
+* [기초]()
 
 ## 개발도서
